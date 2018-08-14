@@ -1,0 +1,11 @@
+<h1>Task Manager</h1>
+
+<ul class="list-group">
+<% @tasks.each do |task| %>
+  <li class="list-inline list-group-item"><input type="checkbox" value=" "><%= link_to task.title, tasks_path(task) %>
+    <%= link_to "Delete", task_path(task),
+    method: :delete,
+    data: { confirm: "Are you sure !" } %>
+  </li>
+<% end %>
+</ul>
